@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		F54925D024BA3BF400E29147 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54925CF24BA3BF400E29147 /* Preview Assets.xcassets */; };
 		F54925DB24BA3BF400E29147 /* ChuckyJokesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54925DA24BA3BF400E29147 /* ChuckyJokesTests.swift */; };
 		F54925E624BA3BF400E29147 /* ChuckyJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54925E524BA3BF400E29147 /* ChuckyJokesUITests.swift */; };
+		F54925F424BA3E8500E29147 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54925F324BA3E8500E29147 /* ContentViewModel.swift */; };
+		F54925F724BA401600E29147 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F54925F624BA401600E29147 /* Alamofire */; };
+		F54925F924BA419D00E29147 /* ResponseRootModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54925F824BA419D00E29147 /* ResponseRootModel.swift */; };
+		F54925FB24BA41B600E29147 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54925FA24BA41B600E29147 /* JokeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		F54925E124BA3BF400E29147 /* ChuckyJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChuckyJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54925E524BA3BF400E29147 /* ChuckyJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckyJokesUITests.swift; sourceTree = "<group>"; };
 		F54925E724BA3BF400E29147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54925F324BA3E8500E29147 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		F54925F824BA419D00E29147 /* ResponseRootModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRootModel.swift; sourceTree = "<group>"; };
+		F54925FA24BA41B600E29147 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
+		F54925FC24BA522700E29147 /* ChuckyJokes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChuckyJokes.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54925F724BA401600E29147 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +104,12 @@
 		F54925C724BA3BF200E29147 /* ChuckyJokes */ = {
 			isa = PBXGroup;
 			children = (
+				F54925FC24BA522700E29147 /* ChuckyJokes.entitlements */,
 				F54925C824BA3BF200E29147 /* ChuckyJokesApp.swift */,
 				F54925CA24BA3BF200E29147 /* ContentView.swift */,
+				F54925F324BA3E8500E29147 /* ContentViewModel.swift */,
+				F54925F824BA419D00E29147 /* ResponseRootModel.swift */,
+				F54925FA24BA41B600E29147 /* JokeModel.swift */,
 				F54925CC24BA3BF400E29147 /* Assets.xcassets */,
 				F54925D124BA3BF400E29147 /* Info.plist */,
 				F54925CE24BA3BF400E29147 /* Preview Content */,
@@ -146,6 +159,9 @@
 			dependencies = (
 			);
 			name = ChuckyJokes;
+			packageProductDependencies = (
+				F54925F624BA401600E29147 /* Alamofire */,
+			);
 			productName = ChuckyJokes;
 			productReference = F54925C524BA3BF200E29147 /* ChuckyJokes.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +233,9 @@
 				Base,
 			);
 			mainGroup = F54925BC24BA3BF200E29147;
+			packageReferences = (
+				F54925F524BA401600E29147 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = F54925C624BA3BF200E29147 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,6 +280,9 @@
 			files = (
 				F54925CB24BA3BF200E29147 /* ContentView.swift in Sources */,
 				F54925C924BA3BF200E29147 /* ChuckyJokesApp.swift in Sources */,
+				F54925FB24BA41B600E29147 /* JokeModel.swift in Sources */,
+				F54925F924BA419D00E29147 /* ResponseRootModel.swift in Sources */,
+				F54925F424BA3E8500E29147 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuckyJokes/ChuckyJokes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuckyJokes/Preview Content\"";
 				DEVELOPMENT_TEAM = 7NVKB74E53;
@@ -429,6 +452,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.kazal.ios.ChuckyJokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ChuckyJokes/ChuckyJokes.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ChuckyJokes/Preview Content\"";
 				DEVELOPMENT_TEAM = 7NVKB74E53;
@@ -451,6 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.kazal.ios.ChuckyJokes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -580,6 +606,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F54925F524BA401600E29147 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F54925F624BA401600E29147 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F54925F524BA401600E29147 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F54925BD24BA3BF200E29147 /* Project object */;
 }
